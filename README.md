@@ -3,8 +3,7 @@ Commodities market data analyzer that makes predictions based on past
 performance
 
 <h2>Todo:</h2>
-1. Create menu that gives the user the option of analyzing either commodity 
-price indices or individual commodity prices.
+1. <strike>Create menu that gives the user the option of analyzing either commodity price indices or individual commodity prices.</strike>
 2. Menu should list the options based on the choice the user made in Step 1
 3. Based off the user's selection from the menu in step 2, report to the 
 user the years of data available for the user's choice
