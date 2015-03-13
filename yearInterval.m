@@ -1,5 +1,5 @@
 function varargout = yearInterval(varargin)
-% YEARINTERVAL MATLAB code for yearInterval.fig
+% YEARINTERVInput Start YearAL MATLAB code for yearInterval.fig
 %      YEARINTERVAL, by itself, creates a new YEARINTERVAL or raises the existing
 %      singleton*.
 %
@@ -22,7 +22,7 @@ function varargout = yearInterval(varargin)
 
 % Edit the above text to modify the response to help yearInterval
 
-% Last Modified by GUIDE v2.5 11-Mar-2015 12:02:11
+% Last Modified by GUIDE v2.5 12-Mar-2015 17:38:43
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -73,19 +73,19 @@ function varargout = yearInterval_OutputFcn(hObject, eventdata, handles)
 varargout{1} = handles.output;
 
 
-% --- Executes on selection change in popupmenu1.
-function popupmenu1_Callback(hObject, eventdata, handles)
-% hObject    handle to popupmenu1 (see GCBO)
+% --- Executes on selection change in YearBegin_PopUpMenu.
+function YearBegin_PopUpMenu_Callback(hObject, eventdata, handles)
+% hObject    handle to YearBegin_PopUpMenu (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: contents = cellstr(get(hObject,'String')) returns popupmenu1 contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from popupmenu1
+% Hints: contents = cellstr(get(hObject,'String')) returns YearBegin_PopUpMenu contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from YearBegin_PopUpMenu
 
 
 % --- Executes during object creation, after setting all properties.
-function popupmenu1_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to popupmenu1 (see GCBO)
+function YearBegin_PopUpMenu_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to YearBegin_PopUpMenu (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -96,19 +96,21 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-% --- Executes on selection change in popupmenu2.
-function popupmenu2_Callback(hObject, eventdata, handles)
-% hObject    handle to popupmenu2 (see GCBO)
+% --- Executes on selection change in YearEnd_PopUpMenue.
+function YearEnd_PopUpMenue_Callback(hObject, eventdata, handles)
+% hObject    handle to YearEnd_PopUpMenue (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Hints: contents = cellstr(get(hObject,'String')) returns popupmenu2 contents as cell array
-%        contents{get(hObject,'Value')} returns selected item from popupmenu2
+% Hints: contents = cellstr(get(hObject,'String')) returns YearEnd_PopUpMenue contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from YearEnd_PopUpMenue
+
+
 
 
 % --- Executes during object creation, after setting all properties.
-function popupmenu2_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to popupmenu2 (see GCBO)
+function YearEnd_PopUpMenue_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to YearEnd_PopUpMenue (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
@@ -117,3 +119,71 @@ function popupmenu2_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+
+
+
+function startYear_editText_Callback(hObject, eventdata, handles)
+% hObject    handle to startYear_editText (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of startYear_editText as text
+%        str2double(get(hObject,'String')) returns contents of startYear_editText as a double
+
+startYear = str2num(get(hObject,'String'))
+load('projectData')
+
+
+
+if (startYear == 1981)
+    projectData(13:24,6)
+end
+
+
+% --- Executes during object creation, after setting all properties.
+function startYear_editText_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to startYear_editText (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function endYear_editText_Callback(hObject, eventdata, handles)
+% hObject    handle to endYear_editText (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of endYear_editText as text
+%        str2double(get(hObject,'String')) returns contents of endYear_editText as a double
+endYear = str2num(get(hObject,'String'))
+a = get(handles.startYear_editText,'String')
+
+load('projectData.mat')
+
+if (a == 1980)&(endYear == 1981)
+    projectData(1:12,6)
+end 
+
+
+
+% --- Executes during object creation, after setting all properties.
+function endYear_editText_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to endYear_editText (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+

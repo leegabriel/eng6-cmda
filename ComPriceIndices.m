@@ -79,65 +79,78 @@ function AllComPrice_PushButton_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+graphType
+fprintf('Data available from 1992 - 2015. \n')
+
 
 % --- Executes on button press in NonFuelPrice_PushButton.
 function NonFuelPrice_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to NonFuelPrice_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+graphType
+fprintf('Data available from 1991 - 2015. \n')
 
 % --- Executes on button press in FoodAndBeverage_PushButton.
 function FoodAndBeverage_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to FoodAndBeverage_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+graphType
+fprintf('Data available from 1991 - 2015. \n')
 
 % --- Executes on button press in Food_PushButton.
 function Food_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Food_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+graphType
+fprintf('Data available from 1991 - 2015. \n')
 
 % --- Executes on button press in Beverage_PushButton.
 function Beverage_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Beverage_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+graphType
+fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in Industrial_PushButton.
 function Industrial_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Industrial_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+graphType
+fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in Agricultural_PushButton.
 function Agricultural_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Agricultural_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+graphType
+fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in Metals_PushButton.
 function Metals_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Metals_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+graphType
+fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in Fuel_PushButton.
 function Fuel_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Fuel_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+graphType
+fprintf('Data available from 1992 - 2015. \n')
 
 % --- Executes on button press in CrudeOil_PushButton.
 function CrudeOil_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to CrudeOil_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+graphType
+fprintf('Data available from 1980 - 2015. \n')
