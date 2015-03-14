@@ -151,7 +151,6 @@ elseif strcmp('cotton', c)
     x = N:length(cottonData);
     coeffs = polyfit(x, emaVector, 10);
     p = polyval(coeffs, x);
-    %yDesire = polyval();
 
     handles.plot_tag = plot(x, p, 'r', 1:length(cottonData), ...
         cottonData,'b');
