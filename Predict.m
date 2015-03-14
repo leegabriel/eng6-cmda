@@ -36,7 +36,7 @@ URL = 'http://online.wsj.com/mdc/public/page/2_3023-cashprices.html';
 str = urlread(URL);
 fileID = fopen('webdata.txt', 'w');
 newStr = regexprep(str,'\s*',' '); 
-%fprintf(fileID,'%s\r\n',str); % for debugging
+%fprintf(fileID,'%s\r\n',str); % don't need this nor the file anymore
 copperIndex = regexp(newStr, 'Copper');
 aluminumIndex = regexp(newStr, 'Aluminum'); 
 cottonIndex = regexp(newStr, 'Cotton, 1');
@@ -49,7 +49,7 @@ k = 2 / (N + 1);
 if strcmp('copper', c) 
     set(handles.predict_window, 'Name', 'Prediction for Copper');
 
-    copperEnd = length(copperData); % just for example...
+    copperEnd = length(copperData); 
 
     simpleAvg = sum(copperData(1:N))/N;
 
@@ -66,7 +66,6 @@ if strcmp('copper', c)
     x = N:length(copperData);
     coeffs = polyfit(x, emaVector, 10);
     p = polyval(coeffs, x);
-    %yDesire = polyval();
 
     handles.plot_tag = plot(x, p, 'r', 1:length(copperData), ...
         copperData,'b');
@@ -92,8 +91,8 @@ if strcmp('copper', c)
 elseif strcmp('aluminum', c)
     set(handles.predict_window, 'Name', 'Prediction for Aluminum');
     
-    aluminumEnd = length(aluminumData); % just for example...
-
+    aluminumEnd = length(aluminumData); 
+    
     simpleAvg = sum(aluminumData(1:N))/N;
 
     emaVector = zeros(1,aluminumEnd-N);
@@ -109,7 +108,6 @@ elseif strcmp('aluminum', c)
     x = N:length(aluminumData);
     coeffs = polyfit(x, emaVector, 10);
     p = polyval(coeffs, x);
-    %yDesire = polyval();
 
     handles.plot_tag = plot(x, p, 'r', 1:length(aluminumData), ...
         aluminumData,'b');
@@ -135,7 +133,7 @@ elseif strcmp('aluminum', c)
 elseif strcmp('cotton', c)
     set(handles.predict_window, 'Name', 'Prediction for Cotton');
     
-    cottonEnd = length(cottonData); % just for example...
+    cottonEnd = length(cottonData); 
 
     simpleAvg = sum(cottonData(1:N))/N;
 
@@ -178,7 +176,7 @@ elseif strcmp('cotton', c)
 elseif strcmp('cocoa', c)
     set(handles.predict_window, 'Name', 'Prediction for Cocoa');
 
-    cocoaEnd = length(cocoaData); % just for example...
+    cocoaEnd = length(cocoaData); 
 
     simpleAvg = sum(cocoaData(1:N))/N;
 
@@ -195,7 +193,6 @@ elseif strcmp('cocoa', c)
     x = N:length(cocoaData);
     coeffs = polyfit(x, emaVector, 10);
     p = polyval(coeffs, x);
-    %yDesire = polyval();
 
     handles.plot_tag = plot(x, p, 'r', 1:length(cocoaData), ...
         cocoaData,'b');
@@ -224,12 +221,6 @@ else
     errordlg( message, 'Error' )
 end
 
-% --- Outputs from this function are returned to the command line.
 function varargout = Predict_OutputFcn(hObject, eventdata, handles) 
-% varargout  cell array for returning output args (see VARARGOUT);
-% hObject    handle to figure
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
-% Get default command line output from handles structure
 varargout{1} = handles.output;

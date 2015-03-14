@@ -23,18 +23,20 @@ is being plotted and the type of plot (those listed in #4 above)
 6. Offer the option of predicting the future price of the individual
 commodity if the user has chosen one of the following: 
 <ul> 
-<li>Crude Oil</li>
 <li>Copper</li>
 <li>Aluminum (LME)</li>
 <li>Cotton</li> 
 <li>Cocoa</li>
 </ul>
-7. Carry out the prediction using an exponential moving average (EMA) on 
-the data*
-8. Use curve­fitting in order to obtain a predicted price.
-9. Use curve­fitting results to generate the predicted price for the day 
-the program is running.
-10. Query the Internet
+7. <strike>Carry out the prediction using an exponential moving average (EMA) on 
+the data</strike>*
+8. <strike>Use curve­fitting in order to obtain a predicted price.</strike>
+9. </strike>Use curve­fitting results to generate the predicted price for the day 
+the program is running.</strike>
+10. <strike>Query the Internet</strike>
 
 *Also need to devise strategy to deal with sudden and dramatic increase in 
 price
+
+11. Video.
+12. Writeup.
