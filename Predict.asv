@@ -25,7 +25,6 @@ guidata(hObject, handles);
 
 load project2Data
 
-c = getappdata(0, 'choice');
 %c = 'copper'; % a graph is displayed depending on the choice, c
 
 copperData = project2Data(:,21); % get relevant data first
@@ -47,7 +46,7 @@ fclose(fileID);
 N = 10; % Initializations for the EMA
 k = 2 / (N + 1);
 
-if strcmp('copper', c) 
+if strcmp('copper', varargin) 
     set(handles.predict_window, 'Name', 'Prediction for Copper');
 
     copperEnd = length(copperData); 
@@ -89,7 +88,7 @@ if strcmp('copper', c)
     
     set(handles.actual_tag, 'String', actual);
      
-elseif strcmp('aluminum', c)
+elseif strcmp('aluminum', varargin)
     set(handles.predict_window, 'Name', 'Prediction for Aluminum');
     
     aluminumEnd = length(aluminumData); 
@@ -131,7 +130,7 @@ elseif strcmp('aluminum', c)
     
     set(handles.actual_tag, 'String', actual);
 
-elseif strcmp('cotton', c)
+elseif strcmp('cotton', varargin)
     set(handles.predict_window, 'Name', 'Prediction for Cotton');
     
     cottonEnd = length(cottonData); 
@@ -174,7 +173,7 @@ elseif strcmp('cotton', c)
 
     set(handles.actual_tag, 'String', actual);
     
-elseif strcmp('cocoa',c)
+elseif strcmp('cocoa', c)
     set(handles.predict_window, 'Name', 'Prediction for Cocoa');
 
     cocoaEnd = length(cocoaData); 

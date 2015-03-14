@@ -60,6 +60,7 @@ guidata(hObject, handles);
 % UIWAIT makes graphAndPredict wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
+
 % --- Outputs from this function are returned to the command line.
 function varargout = graphAndPredict_OutputFcn(hObject, eventdata, handles) 
 % varargout  cell array for returning output args (see VARARGOUT);
@@ -76,8 +77,7 @@ function pushbutton5_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-fprintf('2\n');
-Predict;
+Predict(varargin);
 
 % --- Executes on button press in pushbutton1.
 function pushbutton1_Callback(hObject, eventdata, handles)
