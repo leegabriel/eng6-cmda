@@ -78,7 +78,7 @@ function Aluminum_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Aluminum_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-graphType
+graphAndPredict
 fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in Hides_PushButton.
@@ -142,7 +142,7 @@ function CocoaBeans_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to CocoaBeans_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-graphType
+graphAndPredict
 fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in Rapseed_pushButton.
@@ -158,7 +158,7 @@ function Copper_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Copper_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-graphType
+graphAndPredict
 fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in Cotton_PushButton.
@@ -166,7 +166,7 @@ function Cotton_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Cotton_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-graphType
+graphAndPredict
 fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in Fishmeal_PushButton.
