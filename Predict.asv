@@ -27,7 +27,7 @@ load project2Data
 
 c = 'cocoa'; % a graph is displayed depending on the choice, c
 
-copperData = project2Data(:,21); % get relevant data first
+copperData = project2Data(:,21);
 aluminumData = project2Data(:,12);
 cottonData = project2Data(:,22);
 cocoaData = project2Data(:,17);
@@ -36,9 +36,9 @@ URL = 'http://online.wsj.com/mdc/public/page/2_3023-cashprices.html';
 str = urlread(URL);
 fileID = fopen('webdata.txt', 'w');
 newStr = regexprep(str,'\s*',' '); 
-%fprintf(fileID,'%s\r\n',str); % for debugging
+fprintf(fileID,'%s\r\n',str);
+aluminumIndex = regexp(newStr, 'Aluminum'); % initiali
 copperIndex = regexp(newStr, 'Copper');
-aluminumIndex = regexp(newStr, 'Aluminum'); 
 cottonIndex = regexp(newStr, 'Cotton, 1');
 cocoaIndex = regexp(newStr, 'Cocoa');
 fclose(fileID); 
@@ -77,18 +77,7 @@ if strcmp('copper', c)
     legend(horzcat('EMA-', num2str(N)), 'Copper Data' );
     set(handles.date_tag, 'String', horzcat('As of ', ...
         datestr(now,'mmmm dd, yyyy, HH:MM AM:')));
-    
     set(handles.predict_tag, 'String', polyval(coeffs, copperData(end)));
-    
-    copperRow = newStr(copperIndex:copperIndex+300);
-    expression = '<b>';
-    startIndex = regexp(copperRow,expression);
-    expression = '</b>';
-    endIndex = regexp(copperRow, expression);
-    actual = copperRow(startIndex+3:endIndex-1);
-    
-    set(handles.actual_tag, 'String', actual);
-     
 elseif strcmp('aluminum', c)
     set(handles.predict_window, 'Name', 'Prediction for Aluminum');
     
@@ -120,18 +109,7 @@ elseif strcmp('aluminum', c)
     legend(horzcat('EMA-', num2str(N)), 'Aluminum Data' );
     set(handles.date_tag, 'String', horzcat('As of ', ...
         datestr(now,'mmmm dd, yyyy, HH:MM AM:')));
-    
     set(handles.predict_tag, 'String', polyval(coeffs, aluminumData(end)));
-    
-    aluminumRow = newStr(aluminumIndex:aluminumIndex+300);
-    expression = '<b>';
-    startIndex = regexp(aluminumRow,expression);
-    expression = '</b>';
-    endIndex = regexp(aluminumRow, expression);
-    actual = aluminumRow(startIndex+3:endIndex-1);
-    
-    set(handles.actual_tag, 'String', actual);
-
 elseif strcmp('cotton', c)
     set(handles.predict_window, 'Name', 'Prediction for Cotton');
     
@@ -163,18 +141,7 @@ elseif strcmp('cotton', c)
     legend(horzcat('EMA-', num2str(N)), 'Cotton Data' );
     set(handles.date_tag, 'String', horzcat('As of ', ...
         datestr(now,'mmmm dd, yyyy, HH:MM AM:')));
-    
     set(handles.predict_tag, 'String', polyval(coeffs, cottonData(end)));
-    
-    cottonRow = newStr(cottonIndex:cottonIndex+300);
-    expression = '<b>';
-    startIndex = regexp(cottonRow,expression);
-    expression = '</b>';
-    endIndex = regexp(cottonRow, expression);
-    actual = cottonRow(startIndex+3:endIndex-1);
-
-    set(handles.actual_tag, 'String', actual);
-    
 elseif strcmp('cocoa', c)
     set(handles.predict_window, 'Name', 'Prediction for Cocoa');
 
@@ -206,17 +173,7 @@ elseif strcmp('cocoa', c)
     legend(horzcat('EMA-', num2str(N)), 'Cocoa Data' );
     set(handles.date_tag, 'String', horzcat('As of ', ...
         datestr(now,'mmmm dd, yyyy, HH:MM AM:')));
-    
     set(handles.predict_tag, 'String', polyval(coeffs, cocoaData(end)));
-    
-    cocoaRow = newStr(cocoaIndex:cocoaIndex+300);
-    expression = '<b>';
-    startIndex = regexp(cocoaRow,expression);
-    expression = '</b>';
-    endIndex = regexp(cocoaRow, expression);
-    actual = cocoaRow(startIndex+3:endIndex-1);
-    
-    set(handles.actual_tag, 'String', actual);
 else
     set(handles.predict_window, 'Visible','off');
     message = horzcat('Sorry. We don''t seem to have the data for "', ...
