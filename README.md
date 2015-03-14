@@ -20,14 +20,14 @@ specified by the user.</li>
 </ul>
 5. Have a title listing the commodity price index or commodity price that
 is being plotted and the type of plot (those listed in #4 above)
-6. Offer the option of predicting the future price of the individual
+6. <strike>Offer the option of predicting the future price of the individual
 commodity if the user has chosen one of the following: 
 <ul> 
 <li>Copper</li>
 <li>Aluminum (LME)</li>
 <li>Cotton</li> 
 <li>Cocoa</li>
-</ul>
+</ul></strike>
 7. <strike>Carry out the prediction using an exponential moving average (EMA) on 
 the data</strike>*
 8. <strike>Use curve­fitting in order to obtain a predicted price.</strike>
