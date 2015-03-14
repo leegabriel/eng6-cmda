@@ -31,7 +31,7 @@ commodity if the user has chosen one of the following:
 7. <strike>Carry out the prediction using an exponential moving average (EMA) on 
 the data</strike>*
 8. <strike>Use curve­fitting in order to obtain a predicted price.</strike>
-9. </strike>Use curve­fitting results to generate the predicted price for the day 
+9. <strike>Use curve­fitting results to generate the predicted price for the day 
 the program is running.</strike>
 10. <strike>Query the Internet</strike>
 
