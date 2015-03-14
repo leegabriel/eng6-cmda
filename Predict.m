@@ -25,7 +25,7 @@ guidata(hObject, handles);
 
 load project2Data
 
-c = 'cocoa'; % a graph is displayed depending on the choice, c
+c = 'copper'; % a graph is displayed depending on the choice, c
 
 copperData = project2Data(:,21); % get relevant data first
 aluminumData = project2Data(:,12);
