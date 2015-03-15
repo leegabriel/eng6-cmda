@@ -22,7 +22,7 @@ function varargout = graphAndPredict(varargin)
 
 % Edit the above text to modify the response to help graphAndPredict
 
-% Last Modified by GUIDE v2.5 14-Mar-2015 11:34:02
+% Last Modified by GUIDE v2.5 15-Mar-2015 13:42:24
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -71,36 +71,36 @@ function varargout = graphAndPredict_OutputFcn(hObject, eventdata, handles)
 varargout{1} = handles.output;
 
 
-% --- Executes on button press in pushbutton5.
-function pushbutton5_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton5 (see GCBO)
+% --- Executes on button press in PBPredict.
+function PBPredict_Callback(hObject, eventdata, handles)
+% hObject    handle to PBPredict (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 Predict;
 
-% --- Executes on button press in pushbutton1.
-function pushbutton1_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton1 (see GCBO)
+% --- Executes on button press in PBspecific.
+function PBspecific_Callback(hObject, eventdata, handles)
+% hObject    handle to PBspecific (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
 
-% --- Executes on button press in pushbutton2.
-function pushbutton2_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton2 (see GCBO)
+% --- Executes on button press in PBquarterly.
+function PBquarterly_Callback(hObject, eventdata, handles)
+% hObject    handle to PBquarterly (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
 
-% --- Executes on button press in pushbutton3.
-function pushbutton3_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton3 (see GCBO)
+% --- Executes on button press in PBmonthly.
+function PBmonthly_Callback(hObject, eventdata, handles)
+% hObject    handle to PBmonthly (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+Monthlist
 
-
-% --- Executes on button press in pushbutton4.
-function pushbutton4_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton4 (see GCBO)
+% --- Executes on button press in PByearly.
+function PByearly_Callback(hObject, eventdata, handles)
+% hObject    handle to PByearly (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)

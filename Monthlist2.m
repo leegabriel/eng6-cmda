@@ -78,7 +78,7 @@ function Jan_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Jan_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-load('projectData.mat')
+load('project2Data.mat')
 janYearlyc=projectData(137:12:422,1);
 
 
@@ -104,7 +104,7 @@ function May_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to May_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-load('projectData.mat')
+load('project2Data.mat')
 
 mayYearlyc=projectData(141:12:422,2);
 axes(handles.axes1)
@@ -127,7 +127,7 @@ function Sept_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Sept_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-load('projectData.mat')
+load('project2Data.mat')
 sepYearlyc=projectData(145:12:422,2);
 c = length(sepYearlyc);
 c=1:c;
@@ -149,7 +149,7 @@ function Oct_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Oct_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-load('projectData.mat')
+load('project2Data.mat')
 octYearlyc=projectData(146:12:422,2);
 c = length(octYearlyc);
 c=1:c;
@@ -171,7 +171,7 @@ function June_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to June_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-load('projectData.mat')
+load('project2Data.mat')
 junYearlyc=projectData(142:12:422,2);
 c = length(junYearlyc);
 c=1:c;
@@ -192,7 +192,7 @@ function Feb_PUshButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Feb_PUshButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-load('projectData.mat')
+load('project2Data.mat')
 febYearlyc=projectData(138:12:422,2);
 c = length(febYearlyc);
 c=1:c;
@@ -213,7 +213,7 @@ function Nov_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Nov_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-load('projectData.mat')
+load('project2Data.mat')
 NovYearlyc=projectData(147:12:422,2);
 c = length(NovYearlyc);
 c=1:c;
@@ -234,7 +234,7 @@ function July_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to July_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-load('projectData.mat')
+load('project2Data.mat')
 julYearlyc=projectData(143:12:422,2);
 c = length(julYearlyc);
 c=1:c;
@@ -255,7 +255,7 @@ function March_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to March_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-load('projectData.mat')
+load('project2Data.mat')
 marYearlyc=projectData(139:12:422,2);
 c = length(marYearlyc);
 c=1:c;
@@ -276,7 +276,7 @@ function Dec_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Dec_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-load('projectData.mat')
+load('project2Data.mat')
 DecYearlyc=projectData(148:12:422,2);
 c = length(DecYearlyc);
 c=1:c;
@@ -297,7 +297,7 @@ function Aug_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Aug_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-load('projectData.mat')
+load('project2Data.mat')
 augYearlyc=projectData(144:12:422,2);
 c = length(augYearlyc);
 c=1:c;
@@ -318,7 +318,7 @@ function April_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to April_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-load('projectData.mat')
+load('project2Data.mat')
 aprYearlyc=projectData(140:12:422,2);
 c = length(aprYearlyc);
 c=1:c;
