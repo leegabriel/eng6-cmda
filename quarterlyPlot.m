@@ -9,8 +9,12 @@ y1 = str2num(y1);
 y2 = '2015';
 y2 = str2num(y2);
 
-yearStarts = 1:12:r;
-y1 = 
+janStarts = 1:12:r;
+length(janStarts)
+yearTotal = floor(r / 12)
+rangeData = zeros(2,r);
+rangeData(1,:);
+
 
 quarterlyData = zeros(r, c);
 if strcmp(q, 'I')
