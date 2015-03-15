@@ -22,7 +22,7 @@ function varargout = yearInterval(varargin)
 
 % Edit the above text to modify the response to help yearInterval
 
-% Last Modified by GUIDE v2.5 12-Mar-2015 17:38:43
+% Last Modified by GUIDE v2.5 15-Mar-2015 14:02:31
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -187,3 +187,10 @@ end
 
 
 
+
+
+% --- Executes on button press in okaybutton.
+function okaybutton_Callback(hObject, eventdata, handles)
+% hObject    handle to okaybutton (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
