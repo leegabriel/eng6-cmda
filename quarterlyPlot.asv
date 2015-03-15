@@ -2,21 +2,30 @@ load project2Data
 
 [r, c] = size(project2Data);
 
-q = inputdlg('Hey dude enter a quarter (ex. I,II,III,IV)');
-%r = inputdlg('lol okay now enter a year range');
-y1 = '1990';
-y1 = str2num(y1);
-y2 = '2015';
-y2 = str2num(y2);
+q = inputdlg('Quarter (ex. I,II,III,IV)');
+choice1 = inputdlg('From year:');
+choice2 = inputdlg('To year:');
 
-janStarts = 1:12:r;
+janStarts = 1:12:r; % Begin creating structure. Do not touch
+janStarts = janStarts';
+
 years = [];
 for k = 1980:2015
     years(end+1) = k;
 end
-years = num2str(years)
+years = num2str(years');
 
-quarterlyData = zeros(r, c);
+myStruct.years = years;
+myStruct.starts = janStarts; % End creating structure
+
+index1 = find(ismember(myStruct.years, choice1));
+start = myStruct.starts(index1)
+index2 = find(ismember(myStruct.years, choice2));
+stop = myStruct.starts(index2)
+
+
+quarterlyData = -1 .* ones(r, c);
+
 if strcmp(q, 'I')
     fprintf('Years for quarter I (Jan - Mar)\n');
     
@@ -48,5 +57,9 @@ elseif strcmp(q, 'IV')
         monthData = project2Data(i+9:12:r, :); % r = last month index
         quarterlyData(i+9:12:r, :) = monthData;
     end
-    quarterlyData
+    4 = quarterlyData
 end
+
+% quarterlyData = quarterlyData(quarterlyData ~= -1)
+% figure(1);
+
