@@ -79,14 +79,14 @@ function okaybutton_Callback(hObject, eventdata, handles)
 % hObject    handle to okaybutton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-if strcmp('graph', 'specific')
+if strcmp(graph, 'specific')
    
-elseif strcmp('graph', 'monthly')
+elseif strcmp(graph, 'monthly')
     month
-elseif strcmp('graph', 'quarterly')
-elseif strcmp('graph', 'yearly')
+elseif strcmp(graph, 'quarterly')
+elseif strcmp(graph, 'yearly')
 else
-    fprintf('Error. We do not have that graph type');
+    fprintf('Error. We do not have that graph type.\n');
 end
 
 % --- Executes on selection change in from.
@@ -97,9 +97,15 @@ function from_Callback(hObject, eventdata, handles)
 
 % Hints: contents = cellstr(get(hObject,'String')) returns from contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from from
-contents = cellstr(get(hObject,'String')) 
+contents = cellstr(get(hObject,'String'))
+save1 = contents{get(hObject,'Value')}
 setappdata(0, 'choice1', contents{get(hObject,'Value')});
 
+if str2double(save2) <= str2double(save1)
+    set(handles.okaybutton, 'Visible', 'Off');
+else
+    set(handles.okaybutton, 'Visible', 'On');
+end
 % --- Executes during object creation, after setting all properties.
 function from_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to from (see GCBO)
@@ -123,8 +129,18 @@ function to_Callback(hObject, eventdata, handles)
 %        contents{get(hObject,'Value')} returns selected item from to
 contents = cellstr(get(hObject,'String'))
 setappdata(0, 'choice2', contents{get(hObject,'Value')});
+save2 = contents{get(hObject,'Value')}
+if strcmp(save2, '-Select a Year-')
+    set(handles.okaybutton, 'Visible', 'Off'); 
+elseif ~strcmp(save2, '-Select a Year-')
+    set(handles.okaybutton, 'Visible', 'On');
+end
 
-
+if str2double(save2) <= str2double(save1)
+    set(handles.okaybutton, 'Visible', 'Off');
+else
+    set(handles.okaybutton, 'Visible', 'On');
+end
 % --- Executes during object creation, after setting all properties.
 function to_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to to (see GCBO)
