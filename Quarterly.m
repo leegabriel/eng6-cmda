@@ -22,7 +22,7 @@ function varargout = Quarterly(varargin)
 
 % Edit the above text to modify the response to help Quarterly
 
-% Last Modified by GUIDE v2.5 12-Mar-2015 17:24:03
+% Last Modified by GUIDE v2.5 14-Mar-2015 16:27:58
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -74,7 +74,7 @@ varargout{1} = handles.output;
 
 
 % --- Executes on button press in JanThruMarch_PushButton.
-function JanThruMarch_PushButton_Callback(hObject, eventdata, handles)
+function JanThruMar_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to JanThruMarch_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -82,7 +82,7 @@ function JanThruMarch_PushButton_Callback(hObject, eventdata, handles)
 yearInterval
 
 % --- Executes on button press in JulThruSept_PushButton.
-function JulThruSept_PushButton_Callback(hObject, eventdata, handles)
+function JulThruSep_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to JulThruSept_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -90,7 +90,7 @@ function JulThruSept_PushButton_Callback(hObject, eventdata, handles)
 yearInterval
 
 % --- Executes on button press in AprilThruJune_PushButton.
-function AprilThruJune_PushButton_Callback(hObject, eventdata, handles)
+function AprThruJun_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to AprilThruJune_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
