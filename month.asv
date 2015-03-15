@@ -1,0 +1,33 @@
+load project2Data
+
+choice1 = inputdlg('From year:');
+choice2 = inputdlg('To year:');
+
+years = [];
+for k = 1980:2015
+    years(end+1) = k;
+end
+years = num2str(years');
+myStruct.years = years;
+
+[r, c] = size(project2Data);
+myStruct.janStarts = 1:12:r; 
+myStruct.febStarts = 2:12:r; 
+myStruct.marStarts = 3:12:r; 
+myStruct.aprStarts = 4:12:r; 
+myStruct.mayStarts = 5:12:r; 
+myStruct.junStarts = 6:12:r; 
+myStruct.julStarts = 7:12:r; 
+myStruct.augStarts = 8:12:r; 
+myStruct.sepStarts = 9:12:r; 
+myStruct.octStarts = 10:12:r; 
+myStruct.novStarts = 11:12:r; 
+myStruct.decStarts = 12:12:r; 
+
+index1 = find(ismember(myStruct.years, choice1));
+start = myStruct.janStarts(index1)% janStart is same as year
+index2 = find(ismember(myStruct.years, choice2));
+stop = myStruct.janStarts(index2)
+x = start:stop;
+figure(1);
+plot(x, projectData(myStructjanStarts(x)));
