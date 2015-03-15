@@ -61,6 +61,7 @@ guidata(hObject, handles);
 % UIWAIT makes chooseYear wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
+set(handles.okaybutton, 'Visible', 'Off');
 
 % --- Outputs from this function are returned to the command line.
 function varargout = chooseYear_OutputFcn(hObject, eventdata, handles) 
@@ -78,14 +79,14 @@ function okaybutton_Callback(hObject, eventdata, handles)
 % hObject    handle to okaybutton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-if strcmp('graph', 'specific')
-   
-elseif strcmp('graph', 'monthly')
-    mo
-elseif strcmp('graph', 'quarterly')
-elseif strcmp('graph', 'yearly')
+if str2double(save2) <= str2double(save1)
+    
+if strcmp(graph, 'monthly')
+    month
+elseif strcmp(graph, 'quarterly')
+elseif strcmp(graph, 'yearly')
 else
-    fprintf('Error. We do not have that graph type');
+    fprintf('Error. We do not have that graph type.\n');
 end
 
 % --- Executes on selection change in from.
@@ -96,9 +97,15 @@ function from_Callback(hObject, eventdata, handles)
 
 % Hints: contents = cellstr(get(hObject,'String')) returns from contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from from
-contents = cellstr(get(hObject,'String')) 
+contents = cellstr(get(hObject,'String'))
+save = contents{get(hObject,'Value')}
 setappdata(0, 'choice1', contents{get(hObject,'Value')});
-
+to_Callback(hObject, eventdata, handles)
+if str2double(save2) <= str2double(save)
+    set(handles.okaybutton, 'Visible', 'Off');
+else
+    set(handles.okaybutton, 'Visible', 'On');
+end
 % --- Executes during object creation, after setting all properties.
 function from_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to from (see GCBO)
@@ -122,7 +129,14 @@ function to_Callback(hObject, eventdata, handles)
 %        contents{get(hObject,'Value')} returns selected item from to
 contents = cellstr(get(hObject,'String'))
 setappdata(0, 'choice2', contents{get(hObject,'Value')});
+save = contents{get(hObject,'Value')}
+from_Callback(hObject, eventdata, handles)
 
+if strcmp(save, '-Select a Year-')
+    set(handles.okaybutton, 'Visible', 'Off'); 
+elseif ~strcmp(save, '-Select a Year-')
+    set(handles.okaybutton, 'Visible', 'On');
+end
 
 % --- Executes during object creation, after setting all properties.
 function to_CreateFcn(hObject, eventdata, handles)

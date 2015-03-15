@@ -62,7 +62,7 @@ guidata(hObject, handles);
 % uiwait(handles.figure1);
 
 set(handles.okaybutton, 'Visible', 'Off');
-
+set(handles.text3, 'Visible', 'Off');
 % --- Outputs from this function are returned to the command line.
 function varargout = chooseYear_OutputFcn(hObject, eventdata, handles) 
 % varargout  cell array for returning output args (see VARARGOUT);
@@ -79,14 +79,16 @@ function okaybutton_Callback(hObject, eventdata, handles)
 % hObject    handle to okaybutton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-if strcmp(graph, 'specific')
-   
-elseif strcmp(graph, 'monthly')
-    month
-elseif strcmp(graph, 'quarterly')
-elseif strcmp(graph, 'yearly')
+if str2double(save2) <= str2double(save1)
+    set(handles.text3, 'Visible', 'On');
 else
-    fprintf('Error. We do not have that graph type.\n');
+    if strcmp(graph, 'monthly')
+        month
+    elseif strcmp(graph, 'quarterly')
+    elseif strcmp(graph, 'yearly')
+    else
+        fprintf('Error. We do not have that graph type.\n');
+    end
 end
 
 % --- Executes on selection change in from.
@@ -101,9 +103,9 @@ contents = cellstr(get(hObject,'String'))
 save1 = contents{get(hObject,'Value')}
 setappdata(0, 'choice1', contents{get(hObject,'Value')});
 
-if str2double(save2) <= str2double(save1)
-    set(handles.okaybutton, 'Visible', 'Off');
-else
+if strcmp(save1, '-Select a Year-')
+    set(handles.okaybutton, 'Visible', 'Off'); 
+elseif ~strcmp(save1, '-Select a Year-')
     set(handles.okaybutton, 'Visible', 'On');
 end
 % --- Executes during object creation, after setting all properties.
@@ -130,17 +132,14 @@ function to_Callback(hObject, eventdata, handles)
 contents = cellstr(get(hObject,'String'))
 setappdata(0, 'choice2', contents{get(hObject,'Value')});
 save2 = contents{get(hObject,'Value')}
+from_Callback(hObject, eventdata, handles)
+
 if strcmp(save2, '-Select a Year-')
     set(handles.okaybutton, 'Visible', 'Off'); 
 elseif ~strcmp(save2, '-Select a Year-')
     set(handles.okaybutton, 'Visible', 'On');
 end
 
-if str2double(save2) <= str2double(save1)
-    set(handles.okaybutton, 'Visible', 'Off');
-else
-    set(handles.okaybutton, 'Visible', 'On');
-end
 % --- Executes during object creation, after setting all properties.
 function to_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to to (see GCBO)
