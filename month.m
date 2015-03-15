@@ -28,79 +28,117 @@ start = find(ismember(myStruct.years, choice1));
 stop = find(ismember(myStruct.years, choice2));
 
 c = 2;
-m = 'jan';
+m = 'feb';
 if strcmp('jan', m)
     january = project2Data(myStruct.janStarts(start:stop), c);
-    x = start:stop;
+    x = (str2double(choice1):str2double(choice2))';
     figure(1);
-    plot(x, january);
-    set(gca,'xtick', cellstr(myStruct.years(start:stop)))
+    plot(datenum(x,1,1), january);
+    dateFormat = 11;
+    datetick('x',dateFormat)
+    ylabel('Price')
+    xlabel('Year');
+    title('January Prices from '); %, str2double(choice1), ' to ', ...
+        %xstr2double(choice2)));
 elseif strcmp('feb', m)
     february = project2Data(myStruct.febStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
-    plot(x, february);
-
+    plot(datenum(x,1,1), february);
+    dateFormat = 11;
+    datetick('x',dateFormat)
+    ylabel('Price')
+    xlabel('Year');
 elseif strcmp('mar', m)
     march = project2Data(myStruct.marStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
-    plot(x, march);
-    
+    plot(datenum(x,1,1), march);
+    dateFormat = 11;
+    datetick('x',dateFormat)
+    ylabel('Price')
+    xlabel('Year');
 elseif strcmp('apr', m)
     april = project2Data(myStruct.aprStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
-    plot(x, april);
-    
+    plot(datenum(x,1,1), april);
+    dateFormat = 11;
+    datetick('x',dateFormat)
+    ylabel('Price')
+    xlabel('Year');
 elseif strcmp('may', m)
     may = project2Data(myStruct.mayStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
-    plot(x, may);
-    
+    plot(datenum(x,1,1), may);
+    dateFormat = 11;
+    datetick('x',dateFormat)
+    ylabel('Price')
+    xlabel('Year');
 elseif strcmp('jun', m)
     june = project2Data(myStruct.junStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
-    plot(x, june);
+    plot(datenum(x,1,1), june);
+    dateFormat = 11;
+    datetick('x',dateFormat)
+    ylabel('Price')
+    xlabel('Year');
 elseif strcmp('jul', m)
     july = project2Data(myStruct.julStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
-    plot(x, july);
-    
+    plot(datenum(x,1,1), july);
+    dateFormat = 11;
+    datetick('x',dateFormat)
+    ylabel('Price')
+    xlabel('Year');
 elseif strcmp('aug', m)
     august = project2Data(myStruct.augStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
-    plot(x, august);
-    
+    plot(datenum(x,1,1), august);
+    dateFormat = 11;
+    datetick('x',dateFormat)
+    ylabel('Price')
+    xlabel('Year');
 elseif strcmp('sep', m)
     september = project2Data(myStruct.sepStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
-    plot(x, september);
-    
+    plot(datenum(x,1,1), september);
+    dateFormat = 11;
+    datetick('x',dateFormat)
+    ylabel('Price')
+    xlabel('Year');
 elseif strcmp('oct', m)
     october = project2Data(myStruct.octStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
-    plot(x, october);
-    
+    plot(datenum(x,1,1), october);
+    dateFormat = 11;
+    datetick('x',dateFormat)
+    ylabel('Price')
+    xlabel('Year');
 elseif strcmp('nov', m)
     november = project2Data(myStruct.novStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
-    plot(x, november);
-    
+    plot(datenum(x,1,1), november);
+    dateFormat = 11;
+    datetick('x',dateFormat)
+    ylabel('Price')
+    xlabel('Year');
 elseif strcmp('dec', m)
     december = project2Data(myStruct.decStarts(start:stop), c);
     x = start:stop;
     figure(1);
-    plot(x, december);
-    set(gca, 'XTick', 1:stop-start+1, 'XTickLabel',myStruct.years(start:stop))
-    
+    plot(datenum(x,1,1), december);
+    dateFormat = 11;
+    datetick('x',dateFormat)
+    ylabel('Price')
+    xlabel('Year');
 else
     fprintf('Error.\n');
 end
