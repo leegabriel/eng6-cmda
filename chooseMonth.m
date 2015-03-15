@@ -61,6 +61,7 @@ guidata(hObject, handles);
 % UIWAIT makes chooseMonth wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
+set(handles.okaybutton, 'Visible', 'Off');
 
 % --- Outputs from this function are returned to the command line.
 function varargout = chooseMonth_OutputFcn(hObject, eventdata, handles) 
@@ -82,10 +83,12 @@ function popupmenu2_Callback(hObject, eventdata, handles)
 % Hints: contents = cellstr(get(hObject,'String')) returns popupmenu2 contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from popupmenu2
 contents = cellstr(get(hObject,'String'))
-contents{get(hObject,'Value')}
+save = contents{get(hObject,'Value')}
 setappdata(0, 'm', contents{get(hObject,'Value')});
-if strcmp('m', '-Select a Month-')
-    fprintf('Error.\n');
+if strcmp(save, '-Select a Month-')
+    set(handles.okaybutton, 'Visible', 'Off'); 
+elseif ~strcmp(save, '-Select a Month-')
+    set(handles.okaybutton, 'Visible', 'On');
 end
 
 % --- Executes during object creation, after setting all properties.

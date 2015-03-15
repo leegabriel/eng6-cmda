@@ -61,6 +61,7 @@ guidata(hObject, handles);
 % UIWAIT makes chooseYear wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
+set(handles.okaybutton, 'Visible', 'Off');
 
 % --- Outputs from this function are returned to the command line.
 function varargout = chooseYear_OutputFcn(hObject, eventdata, handles) 
@@ -79,8 +80,9 @@ function okaybutton_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 if strcmp('graph', 'specific')
-    month
+   
 elseif strcmp('graph', 'monthly')
+    month
 elseif strcmp('graph', 'quarterly')
 elseif strcmp('graph', 'yearly')
 else

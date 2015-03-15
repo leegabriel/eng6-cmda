@@ -78,8 +78,15 @@ function okaybutton_Callback(hObject, eventdata, handles)
 % hObject    handle to okaybutton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-if (){
-}
+if strcmp('graph', 'specific')
+   
+elseif strcmp('graph', 'monthly')
+    mo
+elseif strcmp('graph', 'quarterly')
+elseif strcmp('graph', 'yearly')
+else
+    fprintf('Error. We do not have that graph type');
+end
 
 % --- Executes on selection change in from.
 function from_Callback(hObject, eventdata, handles)
@@ -89,6 +96,7 @@ function from_Callback(hObject, eventdata, handles)
 
 % Hints: contents = cellstr(get(hObject,'String')) returns from contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from from
+contents = cellstr(get(hObject,'String')) 
 setappdata(0, 'choice1', contents{get(hObject,'Value')});
 
 % --- Executes during object creation, after setting all properties.
@@ -112,6 +120,7 @@ function to_Callback(hObject, eventdata, handles)
 
 % Hints: contents = cellstr(get(hObject,'String')) returns to contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from to
+contents = cellstr(get(hObject,'String'))
 setappdata(0, 'choice2', contents{get(hObject,'Value')});
 
 
