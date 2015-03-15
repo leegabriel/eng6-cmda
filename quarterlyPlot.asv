@@ -10,7 +10,8 @@ y2 = '2015';
 y2 = str2num(y2);
 
 yearStarts = 1:12:r;
-y1 = 
+if strcmp('1990', y1)
+    
 
 quarterlyData = zeros(r, c);
 if strcmp(q, 'I')
