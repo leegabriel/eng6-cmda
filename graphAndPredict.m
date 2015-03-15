@@ -83,20 +83,21 @@ function PBspecific_Callback(hObject, eventdata, handles)
 % hObject    handle to PBspecific (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+setappdata(0, 'graph', 'specific');
 
 % --- Executes on button press in PBquarterly.
 function PBquarterly_Callback(hObject, eventdata, handles)
 % hObject    handle to PBquarterly (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+setappdata(0, 'graph', 'quarterly');
 
 % --- Executes on button press in PBmonthly.
 function PBmonthly_Callback(hObject, eventdata, handles)
 % hObject    handle to PBmonthly (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'graph', 'montly');
 chooseMonth
 
 % --- Executes on button press in PByearly.
@@ -104,3 +105,4 @@ function PByearly_Callback(hObject, eventdata, handles)
 % hObject    handle to PByearly (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'graph', 'yearly');

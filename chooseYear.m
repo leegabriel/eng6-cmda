@@ -74,23 +74,6 @@ function varargout = chooseYear_OutputFcn(hObject, eventdata, handles)
 varargout{1} = handles.output;
 
 
-% --- Executes on button press in okaybutton.
-function okaybutton_Callback(hObject, eventdata, handles)
-% hObject    handle to okaybutton (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-if str2double(save2) <= str2double(save1)
-    set(handles.text3, 'Visible', 'On');
-else
-    if strcmp(graph, 'monthly')
-        month
-    elseif strcmp(graph, 'quarterly')
-    elseif strcmp(graph, 'yearly')
-    else
-        fprintf('Error. We do not have that graph type.\n');
-    end
-end
-
 % --- Executes on selection change in from.
 function from_Callback(hObject, eventdata, handles)
 % hObject    handle to from (see GCBO)
@@ -150,4 +133,22 @@ function to_CreateFcn(hObject, eventdata, handles)
 %       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
+end
+
+% --- Executes on button press in okaybutton.
+function okaybutton_Callback(hObject, eventdata, handles)
+% hObject    handle to okaybutton (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+if str2double(getappdata(0, 'choice2')) > str2double(getappdata(0, 'choice1'))
+    if strcmp(getappdata(0,'graph'), 'monthly')
+        month
+    elseif strcmp(getappdata(0,'graph'), 'quarterly')
+    elseif strcmp(getappdata(0,'graph'), 'yearly')
+    else
+        fprintf('Error. We do not have that graph type.\n');
+    end
+    
+else
+    set(handles.text3, 'Visible', 'On');
 end
