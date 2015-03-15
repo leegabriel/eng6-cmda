@@ -10,10 +10,7 @@ y2 = '2015';
 y2 = str2num(y2);
 
 janStarts = 1:12:r;
-length(janStarts)
-yearTotal = floor(r / 12)
-rangeData = zeros(2,r);
-rangeData(1,:);
+
 
 
 quarterlyData = zeros(r, c);
