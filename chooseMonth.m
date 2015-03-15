@@ -81,7 +81,8 @@ function popupmenu2_Callback(hObject, eventdata, handles)
 
 % Hints: contents = cellstr(get(hObject,'String')) returns popupmenu2 contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from popupmenu2
-
+contents = cellstr(get(hObject,'String'))
+contents{get(hObject,'Value')}
 setappdata(0, 'm', contents{get(hObject,'Value')});
 if strcmp('m', '-Select a Month-')
     fprintf('Error.\n');

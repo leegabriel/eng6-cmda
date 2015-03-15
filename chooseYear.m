@@ -95,6 +95,7 @@ function from_Callback(hObject, eventdata, handles)
 
 % Hints: contents = cellstr(get(hObject,'String')) returns from contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from from
+contents = cellstr(get(hObject,'String')) 
 setappdata(0, 'choice1', contents{get(hObject,'Value')});
 
 % --- Executes during object creation, after setting all properties.
@@ -118,6 +119,7 @@ function to_Callback(hObject, eventdata, handles)
 
 % Hints: contents = cellstr(get(hObject,'String')) returns to contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from to
+contents = cellstr(get(hObject,'String'))
 setappdata(0, 'choice2', contents{get(hObject,'Value')});
 
 
