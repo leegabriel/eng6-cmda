@@ -97,7 +97,7 @@ function PBmonthly_Callback(hObject, eventdata, handles)
 % hObject    handle to PBmonthly (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-setappdata(0, 'graph', 'montly');
+setappdata(0, 'graph', 'monthly');
 chooseMonth
 
 % --- Executes on button press in PByearly.

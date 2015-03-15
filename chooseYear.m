@@ -115,7 +115,6 @@ function to_Callback(hObject, eventdata, handles)
 contents = cellstr(get(hObject,'String'))
 setappdata(0, 'choice2', contents{get(hObject,'Value')});
 save2 = contents{get(hObject,'Value')}
-from_Callback(hObject, eventdata, handles)
 
 if strcmp(save2, '-Select a Year-')
     set(handles.okaybutton, 'Visible', 'Off'); 
@@ -141,7 +140,9 @@ function okaybutton_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 if str2double(getappdata(0, 'choice2')) > str2double(getappdata(0, 'choice1'))
+    getappdata(0,'graph')
     if strcmp(getappdata(0,'graph'), 'monthly')
+        
         month
     elseif strcmp(getappdata(0,'graph'), 'quarterly')
     elseif strcmp(getappdata(0,'graph'), 'yearly')
