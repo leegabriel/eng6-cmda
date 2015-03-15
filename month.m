@@ -1,7 +1,7 @@
 load project2Data
 
-choice1 = inputdlg('From year:');
-choice2 = inputdlg('To year:');
+choice1 = getappdata(0,'choice1')
+choice2 = getappdata(0,'choice2')
 
 years = [];
 for k = 1980:2015
@@ -28,8 +28,8 @@ start = find(ismember(myStruct.years, choice1));
 stop = find(ismember(myStruct.years, choice2));
 
 c = 2;
-m = 'feb';
-if strcmp('jan', m)
+m = getappdata(0, 'm')
+if strcmp('January', m)
     january = project2Data(myStruct.janStarts(start:stop), c);
     x = (str2double(choice1):str2double(choice2))';
     figure(1);
@@ -40,7 +40,7 @@ if strcmp('jan', m)
     xlabel('Year');
     title('January Prices from '); %, str2double(choice1), ' to ', ...
         %xstr2double(choice2)));
-elseif strcmp('feb', m)
+elseif strcmp('February', m)
     february = project2Data(myStruct.febStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
@@ -49,7 +49,7 @@ elseif strcmp('feb', m)
     datetick('x',dateFormat)
     ylabel('Price')
     xlabel('Year');
-elseif strcmp('mar', m)
+elseif strcmp('March', m)
     march = project2Data(myStruct.marStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
@@ -58,7 +58,7 @@ elseif strcmp('mar', m)
     datetick('x',dateFormat)
     ylabel('Price')
     xlabel('Year');
-elseif strcmp('apr', m)
+elseif strcmp('Apr', m)
     april = project2Data(myStruct.aprStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
@@ -67,7 +67,7 @@ elseif strcmp('apr', m)
     datetick('x',dateFormat)
     ylabel('Price')
     xlabel('Year');
-elseif strcmp('may', m)
+elseif strcmp('May', m)
     may = project2Data(myStruct.mayStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
@@ -76,7 +76,7 @@ elseif strcmp('may', m)
     datetick('x',dateFormat)
     ylabel('Price')
     xlabel('Year');
-elseif strcmp('jun', m)
+elseif strcmp('June', m)
     june = project2Data(myStruct.junStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
@@ -85,7 +85,7 @@ elseif strcmp('jun', m)
     datetick('x',dateFormat)
     ylabel('Price')
     xlabel('Year');
-elseif strcmp('jul', m)
+elseif strcmp('July', m)
     july = project2Data(myStruct.julStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
@@ -94,7 +94,7 @@ elseif strcmp('jul', m)
     datetick('x',dateFormat)
     ylabel('Price')
     xlabel('Year');
-elseif strcmp('aug', m)
+elseif strcmp('August', m)
     august = project2Data(myStruct.augStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
@@ -103,7 +103,7 @@ elseif strcmp('aug', m)
     datetick('x',dateFormat)
     ylabel('Price')
     xlabel('Year');
-elseif strcmp('sep', m)
+elseif strcmp('September', m)
     september = project2Data(myStruct.sepStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
@@ -112,7 +112,7 @@ elseif strcmp('sep', m)
     datetick('x',dateFormat)
     ylabel('Price')
     xlabel('Year');
-elseif strcmp('oct', m)
+elseif strcmp('October', m)
     october = project2Data(myStruct.octStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
@@ -121,7 +121,7 @@ elseif strcmp('oct', m)
     datetick('x',dateFormat)
     ylabel('Price')
     xlabel('Year');
-elseif strcmp('nov', m)
+elseif strcmp('November', m)
     november = project2Data(myStruct.novStarts(start:stop), c);
     x = str2double(choice1):str2double(choice2);
     figure(1);
@@ -130,7 +130,7 @@ elseif strcmp('nov', m)
     datetick('x',dateFormat)
     ylabel('Price')
     xlabel('Year');
-elseif strcmp('dec', m)
+elseif strcmp('December', m)
     december = project2Data(myStruct.decStarts(start:stop), c);
     x = start:stop;
     figure(1);
