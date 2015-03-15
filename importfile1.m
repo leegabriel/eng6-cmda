@@ -1,4 +1,5 @@
 function [Dates,AllCom,NonFuel,FoodAndBeverage,Food,Beverage,Industrial,AgriculturalRawMaterials,Metals,FuelEnergy,CrudeOil,Aluminum,Bananas,BarleyCanadian,Beef,Coal,CocoaBeans,CoffeeArabicas,CoffeeRobusta,RapeseedOil,Copper,Cotton,FishmealPeru,Groundnuts,HidesHeavy,ChinaImport,Lamb,Lead,SoftLogs,HardLogs,MaizeCorn,NaturalGasRussian,NaturalGasIndonesian,NaturalGasLouisiana,Nickel,CrudeOilAvg,CrudeOilUK,OilDubai,CrudeOilInt,OliveOil,Oranges,PalmOil,SwinePork,PoultryChicken,Rice,Rubber,FishSalmon,HardSawnwood,SoftSawnwood,Shrimp,SoybeanMeal,SoybeanOil,SoybeansUS,SugarEuro,SugarFreeMarket,SugarUS,SunflowerOil,TeaMombasa,Tin,Uranium,Wheat,WoolCoarse,WoolFine,Zinc] = importfile1(workbookFile,sheetName,startRow,endRow)
+% THIS IS TO EXTRACT FROM SPREADSHEET, USE getData.m TO EXTRACT EASILY!!
 %IMPORTFILE1 Import data from a spreadsheet
 %   IMPORTFILE1(FILE) reads data from the first worksheet in the Microsoft
 %   Excel spreadsheet file named FILE and returns the data as column

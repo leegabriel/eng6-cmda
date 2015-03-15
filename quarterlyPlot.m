@@ -10,8 +10,11 @@ y2 = '2015';
 y2 = str2num(y2);
 
 janStarts = 1:12:r;
-
-
+years = [];
+for k = 1980:2015
+    years(end+1) = k;
+end
+years = num2str(years)
 
 quarterlyData = zeros(r, c);
 if strcmp(q, 'I')
