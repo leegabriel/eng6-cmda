@@ -100,25 +100,25 @@ start = find(ismember(myStruct.years, {choice1}));
 stop = find(ismember(myStruct.years, {choice2}));
 
 c = 2
-choiceCols = 2:c;
+choiceCols = 2:64;
 choiceLabels = {
     'aluminum';
-    'hides';
-    'coffeearab';
     'gasrussia';
     'banana';
     'barley';
     'beef';
     'coal';
     'cocoa';
+    'coffeearab';
+    'coffeerob';
     'rapeseed';
     'copper';
     'cotton';
     'fishmeal';
     'nuts';
-    'coffeerob';
-    'maize';
+    'hides';
     'hardlogs';
+    'maize';
     'softlogs';
     'lead';
     'lamb';
@@ -142,8 +142,20 @@ choiceLabels = {
     'shrimp';
     'soilmeal';
     'soyoil';
-    'sugafree';
+    'sugareuro';
+    'sugarfree';
+    'soyus';
+    'sugarus';
+    'sunflower';
+    'tea';
+    'tin';
+    'uranium';
+    'wheat';
+    'woolcoarse';
+    'woolfine';
+    'zinc';
     };
+
 
 m = getappdata(0, 'm')
 if strcmp('January', m)
