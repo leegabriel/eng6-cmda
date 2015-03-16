@@ -22,7 +22,7 @@ function varargout = graphType(varargin)
 
 % Edit the above text to modify the response to help graphType
 
-% Last Modified by GUIDE v2.5 10-Mar-2015 20:32:13
+% Last Modified by GUIDE v2.5 15-Mar-2015 19:38:57
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -73,13 +73,6 @@ function varargout = graphType_OutputFcn(hObject, eventdata, handles)
 varargout{1} = handles.output;
 
 
-% --- Executes on button press in PBspecific.
-function PBspecific_Callback(hObject, eventdata, handles)
-% hObject    handle to PBspecific (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-setappdata(0, 'graph', 'specific');
-
 % --- Executes on button press in PBmonthly.
 function PBmonthly_Callback(hObject, eventdata, handles)
 % hObject    handle to PBmonthly (see GCBO)
@@ -87,6 +80,15 @@ function PBmonthly_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 setappdata(0, 'graph', 'monthly');
 chooseMonth
+
+
+% --- Executes on button press in PBSpecific.
+function PBSpecific_Callback(hObject, eventdata, handles)
+% hObject    handle to PBSpecific (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'graph', 'specific');
+
 
 % --- Executes on button press in PBquarterly.
 function PBquarterly_Callback(hObject, eventdata, handles)

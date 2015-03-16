@@ -99,8 +99,8 @@ myStruct.decStarts = [0 ; myStruct.decStarts];
 start = find(ismember(myStruct.years, {choice1}));
 stop = find(ismember(myStruct.years, {choice2}));
 
-c = 2
-choiceCols = 2:64;
+
+choiceCols = (2:64)';
 choiceLabels = {
     'allcom';
     'nonfuel';
@@ -145,6 +145,7 @@ choiceLabels = {
     'palmoil';
     'pork';
     'chicken';
+    'rice';
     'rubber';
     'salmon';
     'hardwood';
@@ -165,7 +166,10 @@ choiceLabels = {
     'woolfine';
     'zinc';
     };
+myStruct2.labels = choiceLabels;
+myStruct2.cols = choiceCols;
 
+c = myStruct2.cols(find(ismember(myStruct2.labels, getappdata(0,'choice')))) 
 
 m = getappdata(0, 'm')
 if strcmp('January', m)
@@ -176,7 +180,8 @@ if strcmp('January', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    set(handles.title_tag, 'String', horzcat('January Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat(getappdata(0,'choice'), '''s ', ...
+        'January Prices from ', choice1, ' to ', choice2));
 elseif strcmp('February', m)
     february = project2Data(myStruct.febStarts(start:stop), c);
     x = (str2double(choice1):str2double(choice2))';
@@ -186,7 +191,8 @@ elseif strcmp('February', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    set(handles.title_tag, 'String', horzcat('February Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat(getappdata(0,'choice'), '''s ', ...
+        'February Prices from ', choice1, ' to ', choice2));
 elseif strcmp('March', m)
     idx = myStruct.marStarts(start:stop);
     march = project2Data(idx(idx ~= 0), c);
@@ -201,8 +207,9 @@ elseif strcmp('March', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-   set(handles.title_tag, 'String', horzcat('March Prices from ', choice1, ' to ', choice2));
-elseif strcmp('Apr', m)
+   set(handles.title_tag, 'String', horzcat(getappdata(0,'choice'), '''s ', ...
+       'March Prices from ', choice1, ' to ', choice2));
+elseif strcmp('April', m)
     idx = myStruct.aprStarts(start:stop);
     april = project2Data(idx(idx ~= 0), c);
     if min(idx) == 0
@@ -216,7 +223,8 @@ elseif strcmp('Apr', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    set(handles.title_tag, 'String', horzcat('April Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat(getappdata(0,'choice'), '''s ', ...
+        'April Prices from ', choice1, ' to ', choice2));
 elseif strcmp('May', m)
     idx = myStruct.mayStarts(start:stop);
     may = project2Data(idx(idx ~= 0), c);
@@ -231,7 +239,8 @@ elseif strcmp('May', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    set(handles.title_tag, 'String', horzcat('May Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat(getappdata(0,'choice'), '''s ', ...
+        'May Prices from ', choice1, ' to ', choice2));
 elseif strcmp('June', m)
     idx = myStruct.junStarts(start:stop);
     june = project2Data(idx(idx ~= 0), c);
@@ -246,7 +255,8 @@ elseif strcmp('June', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    set(handles.title_tag, 'String', horzcat('June Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat(getappdata(0,'choice'), '''s ', ...
+        'June Prices from ', choice1, ' to ', choice2));
 elseif strcmp('July', m)
     idx = myStruct.julStarts(start:stop);
     july = project2Data(idx(idx ~= 0), c);
@@ -261,7 +271,8 @@ elseif strcmp('July', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    set(handles.title_tag, 'String', horzcat('July Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat(getappdata(0,'choice'), '''s ', ...
+        'July Prices from ', choice1, ' to ', choice2));
 elseif strcmp('August', m)
     idx = myStruct.augStarts(start:stop);
     august = project2Data(idx(idx ~= 0), c);
@@ -276,7 +287,8 @@ elseif strcmp('August', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    set(handles.title_tag, 'String', horzcat('August Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat(getappdata(0,'choice'), '''s ', ...
+        'August Prices from ', choice1, ' to ', choice2));
 elseif strcmp('September', m)
     idx = myStruct.sepStarts(start:stop);
     september = project2Data(idx(idx ~= 0), c);
@@ -291,7 +303,8 @@ elseif strcmp('September', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    set(handles.title_tag, 'String', horzcat('September Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat(getappdata(0,'choice'), '''s ', ...
+        'September Prices from ', choice1, ' to ', choice2));
 elseif strcmp('October', m)
     idx = myStruct.octStarts(start:stop);
     october = project2Data(idx(idx ~= 0), c);
@@ -306,7 +319,8 @@ elseif strcmp('October', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    set(handles.title_tag, 'String', horzcat('October Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat(getappdata(0,'choice'), '''s ', ...
+        'October Prices from ', choice1, ' to ', choice2));
 elseif strcmp('November', m)
     idx = myStruct.novStarts(start:stop);
     november = project2Data(idx(idx ~= 0), c);
@@ -321,7 +335,8 @@ elseif strcmp('November', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    set(handles.title_tag, 'String', horzcat('November Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat(getappdata(0,'choice'), '''s ', ...
+        'November Prices from ', choice1, ' to ', choice2));
 elseif strcmp('December', m)
     idx = myStruct.decStarts(start:stop);
     december = project2Data(idx(idx ~= 0), c);
@@ -336,7 +351,8 @@ elseif strcmp('December', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    set(handles.title_tag, 'String', horzcat('December Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat(getappdata(0,'choice'), '''s ', ...
+        'December Prices from ', choice1, ' to ', choice2));
 else
     fprintf('Error.\n');
 end

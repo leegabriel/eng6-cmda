@@ -99,11 +99,20 @@ myStruct.decStarts = [0 ; myStruct.decStarts];
 start = find(ismember(myStruct.years, {choice1}));
 stop = find(ismember(myStruct.years, {choice2}));
 
-c = 2
-choiceCols = 2:64;
+
+choiceCols = (2:64)';
 choiceLabels = {
+    'allcom';
+    'nonfuel';
+    'foodbev';
+    'food';
+    'bev';
+    'industrial';
+    'ARM';
+    'metals';
+    'energyfuel';
+    'crudeoil';
     'aluminum';
-    'gasrussia';
     'banana';
     'barley';
     'beef';
@@ -117,13 +126,15 @@ choiceLabels = {
     'fishmeal';
     'nuts';
     'hides';
+    'china';
+    'lamb';
+    'lead';
+    'softlogs';
     'hardlogs';
     'maize';
-    'softlogs';
-    'lead';
-    'lamb';
-    'china';
+    'gasrussia';
     'gasindo';
+    'gaslouis';
     'nickel';
     'crudeavg';
     'crudeuk';
@@ -131,20 +142,20 @@ choiceLabels = {
     'crudeint';
     'oliveoil';
     'orange';
-    'gaslouis';
     'palmoil';
     'pork';
     'chicken';
+    'rice';
     'rubber';
     'salmon';
     'hardwood';
     'softwood';
     'shrimp';
-    'soilmeal';
+    'soymeal';
     'soyoil';
+    'soyus';
     'sugareuro';
     'sugarfree';
-    'soyus';
     'sugarus';
     'sunflower';
     'tea';
@@ -155,7 +166,10 @@ choiceLabels = {
     'woolfine';
     'zinc';
     };
+myStruct2.labels = choiceLabels;
+myStruct2.cols = choiceCols;
 
+c = myStruct2.cols(find(ismember(myStruct2.labels, getappdata(0,'choice')))) 
 
 m = getappdata(0, 'm')
 if strcmp('January', m)
@@ -192,7 +206,7 @@ elseif strcmp('March', m)
     ylabel('Price');
     xlabel('Year');
    set(handles.title_tag, 'String', horzcat('March Prices from ', choice1, ' to ', choice2));
-elseif strcmp('Apr', m)
+elseif strcmp('April', m)
     idx = myStruct.aprStarts(start:stop);
     april = project2Data(idx(idx ~= 0), c);
     if min(idx) == 0
@@ -326,7 +340,7 @@ elseif strcmp('December', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    set(handles.title_tag, 'String', horzcat('December Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat(getappdata(0,'choice')'December Prices from ', choice1, ' to ', choice2));
 else
     fprintf('Error.\n');
 end
