@@ -102,8 +102,17 @@ stop = find(ismember(myStruct.years, {choice2}));
 c = 2
 choiceCols = 2:64;
 choiceLabels = {
+    'allcom';
+    'nonfuel';
+    'foodbev';
+    'food';
+    'bev';
+    'industrial';
+    'ARM';
+    'metals';
+    'energyfuel';
+    'crudeoil';
     'aluminum';
-    
     'banana';
     'barley';
     'beef';
