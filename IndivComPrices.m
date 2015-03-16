@@ -1,28 +1,4 @@
 function varargout = IndivComPrices(varargin)
-% INDIVCOMPRICES MATLAB code for IndivComPrices.fig
-%      INDIVCOMPRICES, by itself, creates a new INDIVCOMPRICES or raises the existing
-%      singleton*.
-%
-%      H = INDIVCOMPRICES returns the handle to a new INDIVCOMPRICES or the handle to
-%      the existing singleton*.
-%
-%      INDIVCOMPRICES('CALLBACK',hObject,eventData,handles,...) calls the local
-%      function named CALLBACK in INDIVCOMPRICES.M with the given input arguments.
-%
-%      INDIVCOMPRICES('Property','Value',...) creates a new INDIVCOMPRICES or raises the
-%      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before IndivComPrices_OpeningFcn gets called.  An
-%      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to IndivComPrices_OpeningFcn via varargin.
-%
-%      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
-%      instance to run (singleton)".
-%
-% See also: GUIDE, GUIDATA, GUIHANDLES
-
-% Edit the above text to modify the response to help IndivComPrices
-
-% Last Modified by GUIDE v2.5 11-Mar-2015 14:34:16
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -437,7 +413,7 @@ function pushbutton4SugarFreeMarket_PushButton_Callback(hObject, eventdata, hand
 % hObject    handle to pushbutton4SugarFreeMarket_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-setappdata(0, 'choice', 'sugafree')
+setappdata(0, 'choice', 'sugarfree')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
