@@ -1,26 +1,26 @@
-function varargout = monthhandles.plot_tag = plot(varargin)
-% MONTHhandles.plot_tag = plot MATLAB code for monthhandles.plot_tag = plot.fig
-%      MONTHhandles.plot_tag = plot, by itself, creates a new MONTHhandles.plot_tag = plot or raises the existing
+function varargout = monthPlot(varargin)
+% MONTHPLOT MATLAB code for monthPlot.fig
+%      MONTHPLOT, by itself, creates a new MONTHPLOT or raises the existing
 %      singleton*.
 %
-%      H = MONTHhandles.plot_tag = plot returns the handle to a new MONTHhandles.plot_tag = plot or the handle to
+%      H = MONTHPLOT returns the handle to a new MONTHPLOT or the handle to
 %      the existing singleton*.
 %
-%      MONTHhandles.plot_tag = plot('CALLBACK',hObject,eventData,handles,...) calls the local
-%      function named CALLBACK in MONTHhandles.plot_tag = plot.M with the given input arguments.
+%      MONTHPLOT('CALLBACK',hObject,eventData,handles,...) calls the local
+%      function named CALLBACK in MONTHPLOT.M with the given input arguments.
 %
-%      MONTHhandles.plot_tag = plot('Property','Value',...) creates a new MONTHhandles.plot_tag = plot or raises the
+%      MONTHPLOT('Property','Value',...) creates a new MONTHPLOT or raises the
 %      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before monthhandles.plot_tag = plot_OpeningFcn gets called.  An
+%      applied to the GUI before monthPlot_OpeningFcn gets called.  An
 %      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to monthhandles.plot_tag = plot_OpeningFcn via varargin.
+%      stop.  All inputs are passed to monthPlot_OpeningFcn via varargin.
 %
 %      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
 %      instance to run (singleton)".
 %
 % See also: GUIDE, GUIDATA, GUIHANDLES
 
-% Edit the above text to modify the response to help monthhandles.plot_tag = plot
+% Edit the above text to modify the response to help monthPlot
 
 % Last Modified by GUIDE v2.5 15-Mar-2015 18:08:48
 
@@ -28,8 +28,8 @@ function varargout = monthhandles.plot_tag = plot(varargin)
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
-                   'gui_OpeningFcn', @monthhandles.plot_tag = plot_OpeningFcn, ...
-                   'gui_OutputFcn',  @monthhandles.plot_tag = plot_OutputFcn, ...
+                   'gui_OpeningFcn', @monthPlot_OpeningFcn, ...
+                   'gui_OutputFcn',  @monthPlot_OutputFcn, ...
                    'gui_LayoutFcn',  [] , ...
                    'gui_Callback',   []);
 if nargin && ischar(varargin{1})
@@ -44,21 +44,21 @@ end
 % End initialization code - DO NOT EDIT
 
 
-% --- Executes just before monthhandles.plot_tag = plot is made visible.
-function monthhandles.plot_tag = plot_OpeningFcn(hObject, eventdata, handles, varargin)
+% --- Executes just before monthPlot is made visible.
+function monthPlot_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-% varargin   command line arguments to monthhandles.plot_tag = plot (see VARARGIN)
+% varargin   command line arguments to monthPlot (see VARARGIN)
 
-% Choose default command line output for monthhandles.plot_tag = plot
+% Choose default command line output for monthPlot
 handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
 
-% UIWAIT makes monthhandles.plot_tag = plot wait for user response (see UIRESUME)
+% UIWAIT makes monthPlot wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 load project2Data
 
@@ -106,12 +106,12 @@ m = getappdata(0, 'm')
 if strcmp('January', m)
     january = project2Data(myStruct.janStarts(start:stop), c);
     x = (str2double(choice1):str2double(choice2))';
-    handles.handles.plot_tag = plot_tag = handles.plot_tag = plot(datenum(x,1,1), january);
+    handles.plot_tag = plot(datenum(x,1,1), january);
     dateFormat = 11;
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    handles.title_tag = horzcat('January Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat('January Prices from ', choice1, ' to ', choice2);
 elseif strcmp('February', m)
     february = project2Data(myStruct.febStarts(start:stop), c);
     x = (str2double(choice1):str2double(choice2))';
@@ -121,7 +121,7 @@ elseif strcmp('February', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    title(horzcat('February Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat('February Prices from ', choice1, ' to ', choice2);
 elseif strcmp('March', m)
     idx = myStruct.marStarts(start:stop);
     march = project2Data(idx(idx ~= 0), c);
@@ -136,7 +136,7 @@ elseif strcmp('March', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    title(horzcat('March Prices from ', choice1, ' to ', choice2));
+   set(handles.title_tag, 'String', horzcat('March Prices from ', choice1, ' to ', choice2);
 elseif strcmp('Apr', m)
     idx = myStruct.aprStarts(start:stop);
     april = project2Data(idx(idx ~= 0), c);
@@ -151,7 +151,7 @@ elseif strcmp('Apr', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    title(horzcat('April Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat('April Prices from ', choice1, ' to ', choice2);
 elseif strcmp('May', m)
     idx = myStruct.mayStarts(start:stop);
     may = project2Data(idx(idx ~= 0), c);
@@ -166,7 +166,7 @@ elseif strcmp('May', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    title(horzcat('May Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat('May Prices from ', choice1, ' to ', choice2);
 elseif strcmp('June', m)
     idx = myStruct.junStarts(start:stop);
     june = project2Data(idx(idx ~= 0), c);
@@ -181,7 +181,7 @@ elseif strcmp('June', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    title(horzcat('June Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat('June Prices from ', choice1, ' to ', choice2);
 elseif strcmp('July', m)
     idx = myStruct.julStarts(start:stop);
     july = project2Data(idx(idx ~= 0), c);
@@ -196,7 +196,7 @@ elseif strcmp('July', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    title(horzcat('July Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat('July Prices from ', choice1, ' to ', choice2);
 elseif strcmp('August', m)
     idx = myStruct.augStarts(start:stop);
     august = project2Data(idx(idx ~= 0), c);
@@ -211,7 +211,7 @@ elseif strcmp('August', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    title(horzcat('August Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat('August Prices from ', choice1, ' to ', choice2);
 elseif strcmp('September', m)
     idx = myStruct.sepStarts(start:stop);
     september = project2Data(idx(idx ~= 0), c);
@@ -226,7 +226,7 @@ elseif strcmp('September', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    title(horzcat('September Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat('September Prices from ', choice1, ' to ', choice2);
 elseif strcmp('October', m)
     idx = myStruct.octStarts(start:stop);
     october = project2Data(idx(idx ~= 0), c);
@@ -241,7 +241,7 @@ elseif strcmp('October', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    title(horzcat('October Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat('October Prices from ', choice1, ' to ', choice2);
 elseif strcmp('November', m)
     idx = myStruct.novStarts(start:stop);
     november = project2Data(idx(idx ~= 0), c);
@@ -256,7 +256,7 @@ elseif strcmp('November', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    title(horzcat('November Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat('November Prices from ', choice1, ' to ', choice2);
 elseif strcmp('December', m)
     idx = myStruct.decStarts(start:stop);
     december = project2Data(idx(idx ~= 0), c);
@@ -271,14 +271,14 @@ elseif strcmp('December', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    title(horzcat('December Prices from ', choice1, ' to ', choice2));
+    set(handles.title_tag, 'String', horzcat('December Prices from ', choice1, ' to ', choice2);
 else
     fprintf('Error.\n');
 end
 
 
 % --- Outputs from this function are returned to the command line.
-function varargout = monthhandles.plot_tag = plot_OutputFcn(hObject, eventdata, handles) 
+function varargout = monthPlot_OutputFcn(hObject, eventdata, handles) 
 % varargout  cell array for returning output args (see VARARGOUT);
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB

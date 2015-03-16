@@ -111,17 +111,17 @@ if strcmp('January', m)
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    handles.title_tag = horzcat('January Prices from ', choice1, ' to ', choice2);
+    set(handles.title_tag, 'String', horzcat('January Prices from ', choice1, ' to ', choice2));
 elseif strcmp('February', m)
     february = project2Data(myStruct.febStarts(start:stop), c);
     x = (str2double(choice1):str2double(choice2))';
-    figure;
+    
     handles.plot_tag = plot(datenum(x,1,1), february);
     dateFormat = 11;
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    handles.title_tag = horzcat('February Prices from ', choice1, ' to ', choice2);
+    set(handles.title_tag, 'String', horzcat('February Prices from ', choice1, ' to ', choice2));
 elseif strcmp('March', m)
     idx = myStruct.marStarts(start:stop);
     march = project2Data(idx(idx ~= 0), c);
@@ -130,13 +130,13 @@ elseif strcmp('March', m)
     else
         x = (str2double(choice1):str2double(choice2))';
     end
-    figure;
+    
     handles.plot_tag = plot(datenum(x,1,1), march);
     dateFormat = 11;
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-   handles.title_tag = horzcat('March Prices from ', choice1, ' to ', choice2);
+   set(handles.title_tag, 'String', horzcat('March Prices from ', choice1, ' to ', choice2));
 elseif strcmp('Apr', m)
     idx = myStruct.aprStarts(start:stop);
     april = project2Data(idx(idx ~= 0), c);
@@ -145,13 +145,13 @@ elseif strcmp('Apr', m)
     else
         x = (str2double(choice1):str2double(choice2))';
     end
-    figure;
+    
     handles.plot_tag = plot(datenum(x,1,1), april);
     dateFormat = 11;
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    handles.title_tag = horzcat('April Prices from ', choice1, ' to ', choice2);
+    set(handles.title_tag, 'String', horzcat('April Prices from ', choice1, ' to ', choice2));
 elseif strcmp('May', m)
     idx = myStruct.mayStarts(start:stop);
     may = project2Data(idx(idx ~= 0), c);
@@ -160,13 +160,13 @@ elseif strcmp('May', m)
     else
         x = (str2double(choice1):str2double(choice2))';
     end
-    figure;
+    
     handles.plot_tag = plot(datenum(x,1,1), may);
     dateFormat = 11;
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    handles.title_tag = horzcat('May Prices from ', choice1, ' to ', choice2);
+    set(handles.title_tag, 'String', horzcat('May Prices from ', choice1, ' to ', choice2));
 elseif strcmp('June', m)
     idx = myStruct.junStarts(start:stop);
     june = project2Data(idx(idx ~= 0), c);
@@ -175,13 +175,13 @@ elseif strcmp('June', m)
     else
         x = (str2double(choice1):str2double(choice2))';
     end
-    figure;
+    
     handles.plot_tag = plot(datenum(x,1,1), june);
     dateFormat = 11;
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    handles.title_tag = horzcat('June Prices from ', choice1, ' to ', choice2);
+    set(handles.title_tag, 'String', horzcat('June Prices from ', choice1, ' to ', choice2));
 elseif strcmp('July', m)
     idx = myStruct.julStarts(start:stop);
     july = project2Data(idx(idx ~= 0), c);
@@ -190,13 +190,13 @@ elseif strcmp('July', m)
     else
         x = (str2double(choice1):str2double(choice2))';
     end
-    figure;
+    
     handles.plot_tag = plot(datenum(x,1,1), july);
     dateFormat = 11;
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    handles.title_tag = horzcat('July Prices from ', choice1, ' to ', choice2);
+    set(handles.title_tag, 'String', horzcat('July Prices from ', choice1, ' to ', choice2));
 elseif strcmp('August', m)
     idx = myStruct.augStarts(start:stop);
     august = project2Data(idx(idx ~= 0), c);
@@ -205,13 +205,13 @@ elseif strcmp('August', m)
     else
         x = (str2double(choice1):str2double(choice2))';
     end
-    figure;
+    
     handles.plot_tag = plot(datenum(x,1,1), august);
     dateFormat = 11;
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    handles.title_tag = horzcat('August Prices from ', choice1, ' to ', choice2);
+    set(handles.title_tag, 'String', horzcat('August Prices from ', choice1, ' to ', choice2));
 elseif strcmp('September', m)
     idx = myStruct.sepStarts(start:stop);
     september = project2Data(idx(idx ~= 0), c);
@@ -220,13 +220,13 @@ elseif strcmp('September', m)
     else
         x = (str2double(choice1):str2double(choice2))';
     end
-    figure;
+    
     handles.plot_tag = plot(datenum(x,1,1), september);
     dateFormat = 11;
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    handles.title_tag = horzcat('September Prices from ', choice1, ' to ', choice2);
+    set(handles.title_tag, 'String', horzcat('September Prices from ', choice1, ' to ', choice2));
 elseif strcmp('October', m)
     idx = myStruct.octStarts(start:stop);
     october = project2Data(idx(idx ~= 0), c);
@@ -235,13 +235,13 @@ elseif strcmp('October', m)
     else
         x = (str2double(choice1):str2double(choice2))';
     end
-    figure;
+    
     handles.plot_tag = plot(datenum(x,1,1), october);
     dateFormat = 11;
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    handles.title_tag = horzcat('October Prices from ', choice1, ' to ', choice2);
+    set(handles.title_tag, 'String', horzcat('October Prices from ', choice1, ' to ', choice2));
 elseif strcmp('November', m)
     idx = myStruct.novStarts(start:stop);
     november = project2Data(idx(idx ~= 0), c);
@@ -250,13 +250,13 @@ elseif strcmp('November', m)
     else
         x = (str2double(choice1):str2double(choice2))';
     end
-    figure;
+    
     handles.plot_tag = plot(datenum(x,1,1), november);
     dateFormat = 11;
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    handles.title_tag = horzcat('November Prices from ', choice1, ' to ', choice2);
+    set(handles.title_tag, 'String', horzcat('November Prices from ', choice1, ' to ', choice2));
 elseif strcmp('December', m)
     idx = myStruct.decStarts(start:stop);
     december = project2Data(idx(idx ~= 0), c);
@@ -265,13 +265,13 @@ elseif strcmp('December', m)
     else
         x = (str2double(choice1):str2double(choice2))';
     end
-    figure;
+    
     handles.plot_tag = plot(datenum(x,1,1), december);
     dateFormat = 11;
     datetick('x',dateFormat);
     ylabel('Price');
     xlabel('Year');
-    handles.title_tag = horzcat('December Prices from ', choice1, ' to ', choice2);
+    set(handles.title_tag, 'String', horzcat('December Prices from ', choice1, ' to ', choice2));
 else
     fprintf('Error.\n');
 end
