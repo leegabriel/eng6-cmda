@@ -91,6 +91,9 @@ function PBquarterly_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 setappdata(0, 'graph', 'quarterly');
+RGB = imread('IMG_0024.JPG');
+figure
+imshow(RGB)
 
 % --- Executes on button press in PBmonthly.
 function PBmonthly_Callback(hObject, eventdata, handles)

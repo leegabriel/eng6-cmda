@@ -42,6 +42,8 @@ else
     gui_mainfcn(gui_State, varargin{:});
 end
 % End initialization code - DO NOT EDIT
+getdata; % get the cells for the averages
+yearlydata; % gets the averages for commod
 
 
 % --- Executes just before yearlygraph is made visible.
@@ -63,7 +65,7 @@ guidata(hObject, handles);
 
 b = getappdata(0,'year1');
 f = getappdata(0,'year2');
-
+i=0
 if strcmp(b,'1985')
     i=1;
     elseif strcmp(b,'1986')

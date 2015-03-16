@@ -39,4 +39,4 @@ the program is running.</strike>
 price
 
 11. Video.
-12. Writeup.
+12. <strike>Writeup.</strike>

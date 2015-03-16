@@ -42,6 +42,8 @@ else
     gui_mainfcn(gui_State, varargin{:});
 end
 % End initialization code - DO NOT EDIT
+getdata; % get the cells for the averages
+yearlydata; % gets the averages for commod
 
 
 % --- Executes just before yearlygraph is made visible.

@@ -22,7 +22,7 @@ function varargout = yearlygraph(varargin)
 
 % Edit the above text to modify the response to help yearlygraph
 
-% Last Modified by GUIDE v2.5 15-Mar-2015 14:03:34
+% Last Modified by GUIDE v2.5 15-Mar-2015 20:48:52
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -80,7 +80,10 @@ function popupmenuI_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 % Hints: contents = cellstr(get(hObject,'String')) returns popupmenuI contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from popupmenuI
-setappdata(0,'year1')
+
+contents = cellstr(get(hObject,'String'))
+contents{get(hObject,'Value')}
+setappdata(0,'year1', contents{get(hObject,'Value')})
 
 % --- Executes during object creation, after setting all properties.
 function popupmenuI_CreateFcn(hObject, eventdata, handles)
@@ -103,8 +106,9 @@ function popupmenuF_Callback(hObject, eventdata, handles)
 
 % Hints: contents = cellstr(get(hObject,'String')) returns popupmenuF contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from popupmenuF
-
-setappdata(0,'year2')
+contents = cellstr(get(hObject,'String'))
+contents{get(hObject,'Value')}
+setappdata(0,'year2', contents{get(hObject,'Value')})
 
 % --- Executes during object creation, after setting all properties.
 function popupmenuF_CreateFcn(hObject, eventdata, handles)
@@ -119,9 +123,9 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-% --- Executes on button press in pushbutton1.
-function pushbutton1_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton1 (see GCBO)
+% --- Executes on button press in graphbutton.
+function graphbutton_Callback(hObject, eventdata, handles)
+% hObject    handle to graphbutton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 yearlygraph;

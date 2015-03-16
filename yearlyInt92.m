@@ -22,7 +22,7 @@ function varargout = yearlyInt92(varargin)
 
 % Edit the above text to modify the response to help yearlyInt92
 
-% Last Modified by GUIDE v2.5 15-Mar-2015 14:07:49
+% Last Modified by GUIDE v2.5 15-Mar-2015 20:50:35
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -118,9 +118,9 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-% --- Executes on button press in pushbutton1.
-function pushbutton1_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton1 (see GCBO)
+% --- Executes on button press in graphbutton.
+function graphbutton_Callback(hObject, eventdata, handles)
+% hObject    handle to graphbutton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 yearlygraph92;
