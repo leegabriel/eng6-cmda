@@ -60,8 +60,13 @@ elseif strcmp('February', m)
     xlabel('Year');
     title(horzcat('February Prices from ', choice1, ' to ', choice2));
 elseif strcmp('March', m)
-    march = project2Data(myStruct.marStarts(start:stop), c);
-    x = (str2double(choice1):str2double(choice2))';
+    idx = myStruct.marStarts(start:stop);
+    march = project2Data(idx(idx ~= 0), c);
+    if min(idx) == 0
+        x = (str2double(choice1) + 1:str2double(choice2))';
+    else
+        x = (str2double(choice1):str2double(choice2))';
+    end
     figure;
     plot(datenum(x,1,1), march);
     dateFormat = 11;
@@ -70,8 +75,13 @@ elseif strcmp('March', m)
     xlabel('Year');
     title(horzcat('March Prices from ', choice1, ' to ', choice2));
 elseif strcmp('Apr', m)
-    april = project2Data(myStruct.aprStarts(start:stop), c);
-    x = (str2double(choice1):str2double(choice2))';
+    idx = myStruct.aprStarts(start:stop);
+    april = project2Data(idx(idx ~= 0), c);
+    if min(idx) == 0
+        x = (str2double(choice1) + 1:str2double(choice2))';
+    else
+        x = (str2double(choice1):str2double(choice2))';
+    end
     figure;
     plot(datenum(x,1,1), april);
     dateFormat = 11;
@@ -80,8 +90,13 @@ elseif strcmp('Apr', m)
     xlabel('Year');
     title(horzcat('April Prices from ', choice1, ' to ', choice2));
 elseif strcmp('May', m)
-    may = project2Data(myStruct.mayStarts(start:stop), c);
-    x = (str2double(choice1):str2double(choice2))';
+    idx = myStruct.mayStarts(start:stop);
+    may = project2Data(idx(idx ~= 0), c);
+    if min(idx) == 0
+        x = (str2double(choice1) + 1:str2double(choice2))';
+    else
+        x = (str2double(choice1):str2double(choice2))';
+    end
     figure;
     plot(datenum(x,1,1), may);
     dateFormat = 11;
@@ -90,8 +105,13 @@ elseif strcmp('May', m)
     xlabel('Year');
     title(horzcat('May Prices from ', choice1, ' to ', choice2));
 elseif strcmp('June', m)
-    junne = project2Data(myStruct.junStarts(start:stop), c);
-    x = (str2double(choice1):str2double(choice2))';
+    idx = myStruct.junStarts(start:stop);
+    jun = project2Data(idx(idx ~= 0), c);
+    if min(idx) == 0
+        x = (str2double(choice1) + 1:str2double(choice2))';
+    else
+        x = (str2double(choice1):str2double(choice2))';
+    end
     figure;
     plot(datenum(x,1,1), june);
     dateFormat = 11;
@@ -100,8 +120,13 @@ elseif strcmp('June', m)
     xlabel('Year');
     title(horzcat('June Prices from ', choice1, ' to ', choice2));
 elseif strcmp('July', m)
-    july = project2Data(myStruct.julStarts(start:stop), c);
-    x = (str2double(choice1):str2double(choice2))';
+    idx = myStruct.julStarts(start:stop);
+    july = project2Data(idx(idx ~= 0), c);
+    if min(idx) == 0
+        x = (str2double(choice1) + 1:str2double(choice2))';
+    else
+        x = (str2double(choice1):str2double(choice2))';
+    end
     figure;
     plot(datenum(x,1,1), july);
     dateFormat = 11;
@@ -110,8 +135,13 @@ elseif strcmp('July', m)
     xlabel('Year');
     title(horzcat('July Prices from ', choice1, ' to ', choice2));
 elseif strcmp('August', m)
-    august = project2Data(myStruct.augStarts(start:stop), c);
-    x = (str2double(choice1):str2double(choice2))';
+    idx = myStruct.augStarts(start:stop);
+    august = project2Data(idx(idx ~= 0), c);
+    if min(idx) == 0
+        x = (str2double(choice1) + 1:str2double(choice2))';
+    else
+        x = (str2double(choice1):str2double(choice2))';
+    end
     figure;
     plot(datenum(x,1,1), august);
     dateFormat = 11;
@@ -120,8 +150,13 @@ elseif strcmp('August', m)
     xlabel('Year');
     title(horzcat('August Prices from ', choice1, ' to ', choice2));
 elseif strcmp('September', m)
-    september = project2Data(myStruct.sepStarts(start:stop), c);
-    x = (str2double(choice1):str2double(choice2))';
+    idx = myStruct.sepStarts(start:stop);
+    september = project2Data(idx(idx ~= 0), c);
+    if min(idx) == 0
+        x = (str2double(choice1) + 1:str2double(choice2))';
+    else
+        x = (str2double(choice1):str2double(choice2))';
+    end
     figure;
     plot(datenum(x,1,1), september);
     dateFormat = 11;
@@ -130,8 +165,13 @@ elseif strcmp('September', m)
     xlabel('Year');
     title(horzcat('September Prices from ', choice1, ' to ', choice2));
 elseif strcmp('October', m)
-    october = project2Data(myStruct.octStarts(start:stop), c);
-    x = (str2double(choice1):str2double(choice2))';
+    idx = myStruct.octStarts(start:stop);
+    october = project2Data(idx(idx ~= 0), c);
+    if min(idx) == 0
+        x = (str2double(choice1) + 1:str2double(choice2))';
+    else
+        x = (str2double(choice1):str2double(choice2))';
+    end
     figure;
     plot(datenum(x,1,1), october);
     dateFormat = 11;
@@ -140,8 +180,13 @@ elseif strcmp('October', m)
     xlabel('Year');
     title(horzcat('October Prices from ', choice1, ' to ', choice2));
 elseif strcmp('November', m)
-    november = project2Data(myStruct.novStarts(start:stop), c);
-    x = (str2double(choice1):str2double(choice2))';
+    idx = myStruct.novStarts(start:stop);
+    november = project2Data(idx(idx ~= 0), c);
+    if min(idx) == 0
+        x = (str2double(choice1) + 1:str2double(choice2))';
+    else
+        x = (str2double(choice1):str2double(choice2))';
+    end
     figure;
     plot(datenum(x,1,1), november);
     dateFormat = 11;
@@ -150,8 +195,13 @@ elseif strcmp('November', m)
     xlabel('Year');
     title(horzcat('November Prices from ', choice1, ' to ', choice2));
 elseif strcmp('December', m)
-    december = project2Data(myStruct.decStarts(start:stop), c);
-    x = (str2double(choice1):str2double(choice2))';
+    idx = myStruct.decStarts(start:stop);
+    december = project2Data(idx(idx ~= 0), c);
+    if min(idx) == 0
+        x = (str2double(choice1) + 1:str2double(choice2))';
+    else
+        x = (str2double(choice1):str2double(choice2))';
+    end
     figure;
     plot(datenum(x,1,1), december);
     dateFormat = 11;
