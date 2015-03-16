@@ -143,7 +143,7 @@ if str2double(getappdata(0, 'choice2')) > str2double(getappdata(0, 'choice1'))
     getappdata(0,'graph')
     if strcmp(getappdata(0,'graph'), 'monthly')
         
-        month
+        monthPlot
     elseif strcmp(getappdata(0,'graph'), 'quarterly')
     elseif strcmp(getappdata(0,'graph'), 'yearly')
     else

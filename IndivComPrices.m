@@ -87,6 +87,7 @@ function Hides_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Hides_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'hides')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -95,22 +96,25 @@ function CoffeeArabicas_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to CoffeeArabicas_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'coffeearab')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in NaturalGas_pushButton.
-function NaturalGas_pushButton_Callback(hObject, eventdata, handles)
+function NaturalGas_pushButton_Callback(~, eventdata, handles)
 % hObject    handle to NaturalGas_pushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'gasrussia')
 graphType
-fprintf('Data available from 1991 - 2015. \n')
+fprintf('Data available from 1985 - 2015. \n')
 
 % --- Executes on button press in Bananas_PushButton.
-function Bananas_PushButton_Callback(hObject, eventdata, handles)
+function Bananas_PushButton_Callback(hObject, eventdata, ~)
 % hObject    handle to Bananas_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'banana')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -119,6 +123,7 @@ function Barley_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Barley_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'barley')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -127,19 +132,21 @@ function Beef_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Beef_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'beef')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in coalAustralia_PushButton.
-function coalAustralia_PushButton_Callback(hObject, eventdata, handles)
+function coalAustralia_PushButton_Callback(~, eventdata, handles)
 % hObject    handle to coalAustralia_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'coal')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in CocoaBeans_PushButton.
-function CocoaBeans_PushButton_Callback(hObject, eventdata, handles)
+function CocoaBeans_PushButton_Callback(hObject, eventdata, ~)
 % hObject    handle to CocoaBeans_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -148,10 +155,11 @@ graphAndPredict;
 fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in Rapseed_pushButton.
-function Rapseed_pushButton_Callback(hObject, eventdata, handles)
+function Rapseed_pushButton_Callback(~, eventdata, handles)
 % hObject    handle to Rapseed_pushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'rapeseed')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -165,7 +173,7 @@ graphAndPredict;
 fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in Cotton_PushButton.
-function Cotton_PushButton_Callback(hObject, eventdata, handles)
+function Cotton_PushButton_Callback(~, eventdata, handles)
 % hObject    handle to Cotton_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -174,10 +182,11 @@ graphAndPredict;
 fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in Fishmeal_PushButton.
-function Fishmeal_PushButton_Callback(hObject, eventdata, handles)
+function Fishmeal_PushButton_Callback(~, eventdata, handles)
 % hObject    handle to Fishmeal_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'fishmeal')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -186,6 +195,7 @@ function Groundnuts_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Groundnuts_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'nuts')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -194,46 +204,52 @@ function CoffeeRobusta_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to CoffeeRobusta_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'coffeerob')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in Maize_PushButton.
-function Maize_PushButton_Callback(hObject, eventdata, handles)
+function Maize_PushButton_Callback(~, eventdata, handles)
 % hObject    handle to Maize_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'maize')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in HardLogos_PushButton.
-function HardLogos_PushButton_Callback(hObject, eventdata, handles)
+function HardLogos_PushButton_Callback(~, eventdata, handles)
 % hObject    handle to HardLogos_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'hardlogs')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in SoftLogos_PushButton.
-function SoftLogos_PushButton_Callback(hObject, eventdata, handles)
+function SoftLogos_PushButton_Callback(~, eventdata, handles)
 % hObject    handle to SoftLogos_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'softlogs')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in Lead_PushButton.
-function Lead_PushButton_Callback(hObject, eventdata, handles)
+function Lead_PushButton_Callback(hObject, eventdata, ~)
 % hObject    handle to Lead_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'lead')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in Lamb_PushButton.
-function Lamb_PushButton_Callback(hObject, eventdata, handles)
+function Lamb_PushButton_Callback(~, ~, handles)
 % hObject    handle to Lamb_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'lamb')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -242,6 +258,7 @@ function ChinaImport_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to ChinaImport_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'china')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -250,6 +267,7 @@ function NatGasIndonesia_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to NatGasIndonesia_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'gasindo')
 graphType
 fprintf('Data available from 1992 - 2015. \n')
 
@@ -258,6 +276,7 @@ function Nickel_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Nickel_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'nickel')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -266,6 +285,7 @@ function CrudeOilAverage_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to CrudeOilAverage_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'crudeavg')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -274,6 +294,7 @@ function CrudeOilUK_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to CrudeOilUK_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'crudeuk')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -282,6 +303,7 @@ function OilDubai_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to OilDubai_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'oildubai')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -290,6 +312,7 @@ function CrudeOilIntermediate_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to CrudeOilIntermediate_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'crudeint')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -298,6 +321,7 @@ function OliveOil_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to OliveOil_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'oliveoil')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -306,21 +330,24 @@ function OrangesMisc_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to OrangesMisc_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'orange')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 % --- Executes on button press in NatGasLouisiana_PushButton.
-function NatGasLouisiana_PushButton_Callback(hObject, eventdata, handles)
+function NatGasLouisiana_PushButton_Callback(~, eventdata, handles)
 % hObject    handle to NatGasLouisiana_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'gaslouis')
 graphType
-fprintf('Data available from 1985 - 2015. \n')
+fprintf('Data available from 1991 - 2015. \n')
 
 % --- Executes on button press in PalmOil_PushButton.
 function PalmOil_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to PalmOil_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'palmoil')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -329,6 +356,7 @@ function Swine_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Swine_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'pork')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -337,6 +365,7 @@ function Poultry_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Poultry_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'chicken')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -345,6 +374,7 @@ function Rubber_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Rubber_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'rubber')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -353,6 +383,7 @@ function Fish_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Fish_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'salmon')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -361,14 +392,16 @@ function HardSawnwood_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to HardSawnwood_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'hardwood')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
 % --- Executes on button press in SoftSawnwood_PushButton.
-function SoftSawnwood_PushButton_Callback(hObject, eventdata, handles)
+function SoftSawnwood_PushButton_Callback(~, eventdata, handles)
 % hObject    handle to SoftSawnwood_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'softwood')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -377,6 +410,7 @@ function Shrimp_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Shrimp_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'shrimp')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -385,6 +419,7 @@ function SoybeanMeal_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to SoybeanMeal_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'soymeal')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -393,6 +428,7 @@ function SoybeanOil_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to SoybeanOil_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'soyoil')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -401,6 +437,7 @@ function pushbutton4SugarFreeMarket_PushButton_Callback(hObject, eventdata, hand
 % hObject    handle to pushbutton4SugarFreeMarket_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'sugafree')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -409,14 +446,16 @@ function SugarEurope_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to SugarEurope_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'sugareuro')
 graphType
 fprintf('Data available from 1991 - 2015. \n')
 
 % --- Executes on button press in SoybeansUS_PushButton.
-function SoybeansUS_PushButton_Callback(hObject, eventdata, handles)
+function SoybeansUS_PushButton_Callback(~, eventdata, handles)
 % hObject    handle to SoybeansUS_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'soyus')
 graphType
 
 % --- Executes on button press in SugarUSPushButton.
@@ -424,6 +463,7 @@ function SugarUSPushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to SugarUSPushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'sugarus')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -432,6 +472,7 @@ function SunflowerOil_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to SunflowerOil_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'sunflower')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -440,6 +481,7 @@ function Tea_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Tea_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'tea')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -448,6 +490,7 @@ function Tin_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Tin_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'tin')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -456,6 +499,7 @@ function Uranium_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Uranium_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'uranium')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -464,6 +508,7 @@ function Wheat_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Wheat_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'wheat')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -472,6 +517,7 @@ function WoolCoarse_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to WoolCoarse_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'woolcoarse')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -480,6 +526,7 @@ function WoolFine_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to WoolFine_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'woolfine')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
 
@@ -488,5 +535,6 @@ function Zinc_PushButton_Callback(hObject, eventdata, handles)
 % hObject    handle to Zinc_PushButton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+setappdata(0, 'choice', 'zinc')
 graphType
 fprintf('Data available from 1980 - 2015. \n')
